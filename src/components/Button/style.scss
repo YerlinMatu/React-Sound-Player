@@ -1,0 +1,25 @@
+button {
+  border: none;
+  margin-right: 10px;
+  vertical-align: top;
+  outline: none;
+
+  &:hover {
+    background: #1ed760;
+    color: white;
+  }
+
+  &.is-primary {
+    background: '#'
+  }
+
+  &.is-circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  &:not(&:disabled) {
+    cursor: pointer;
+  }
+}

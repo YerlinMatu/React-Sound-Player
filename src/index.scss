@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,600);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// * {
+//   box-sizing: border-box;
+//   font-family: Poppins,Arial,sans-serif;
+// }
+
+html, body {
+  font-family: Poppins,Arial,sans-serif;
+  color: #222;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+
+.playlist {
+  list-style: none;
+  padding: 0;
+  background-color: #efefef;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+.playlist > li {
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  
+  li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+
+  li.current {
+    font-weight: bold;
+  }
+
+  li:hover {
+    opacity: 1;
+  }
+
+  .play-pause-button {
+    margin-right: 0.5rem;
+  }
+}
+
+.player {
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 550px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  height: 100vh;
+
+  &__track {
+    align-self: center;
+    width: 80%;
+    padding: 20px;
+    min-height: 95px;
+    right: 15px;
+    left: 15px;
+    background-color: #fff7f7;
+    border-radius: 15px 15px 0 0;
+    transition: 0.3s ease top;
+    z-index: 1;
+
+    &.is-active {
+      top: -40px;
+      box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+      animation: rotateAlbumArt 3s linear 0s infinite forwards;
+      z-index: 1;
+    }
+
+    &.title {
+      font-size: 20px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    background-color: #fff;
+    box-shadow: 0 30px 80px #656565;
+    border-radius: 15px;
+    z-index: 2;
+  }
+
+}
